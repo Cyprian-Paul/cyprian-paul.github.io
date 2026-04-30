@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cyprian Paul Mang'ong'o | ICT Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Dark overlay over wallpaper -->
+  <div class="overlay"></div>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <span class="nav-logo" onclick="showPage('home')">CPM</span>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#" onclick="showPage('home')">Home</a></li>
+        <li><a href="#" onclick="showPage('about')">About</a></li>
+        <li><a href="#" onclick="showPage('skills')">Skills</a></li>
+        <li><a href="#" onclick="showPage('projects')">Projects</a></li>
+        <li><a href="#" onclick="showPage('achievements')">Achievements</a></li>
+        <li><a href="#" onclick="showPage('analyzer')">Analyze</a></li>
+        <li><a href="#" onclick="showPage('contact')" class="nav-cta">Hire Me</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger">&#9776;</button>
+    </div>
+  </nav>
+
+  <!-- HOME PAGE -->
+  <div class="page active" id="page-home">
+    <div class="container home-inner">
+      <div class="home-text">
+        <p class="home-eyebrow">Welcome to my portfolio</p>
+        <h1 class="home-title">
+          Hi, I am<br />
+          <span class="accent">Cyprian Paul</span><br />
+          Mang'ong'o
+        </h1>
+        <p class="home-profession">
+          <span class="profession-tag">ICT Support Specialist</span>
+          <span class="profession-dot">·</span>
+          <span class="profession-tag">Web Developer</span>
+          <span class="profession-dot">·</span>
+          <span class="profession-tag">Network Technician</span>
+        </p>
+        <p class="home-welcome">
+          Welcome! I am a certified ICT professional based in Kenya. I set up networks, build websites, troubleshoot hardware and software, and support users across real working environments. Explore my work, skills, and projects below.
+        </p>
+        <div class="home-buttons">
+          <button class="btn-primary" onclick="showPage('about')">About Me</button>
+          <button class="btn-ghost" onclick="showPage('skills')">Skills</button>
+          <button class="btn-ghost" onclick="showPage('projects')">Projects</button>
+          <button class="btn-ghost" onclick="showPage('achievements')">Achievements</button>
+          <button class="btn-ghost" onclick="showPage('analyzer')">Analyzer</button>
+          <button class="btn-cta" onclick="showPage('contact')">Hire Me</button>
+        </div>
+        <div class="home-stats">
+          <div class="stat">
+            <span class="stat-num" data-target="2" data-suffix="yrs">0</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num" data-target="8" data-suffix="+">0</span>
+            <span class="stat-label">Projects Done</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num" data-target="15" data-suffix="+">0</span>
+            <span class="stat-label">Skills</span>
+          </div>
+        </div>
+      </div>
+      <div class="home-visual">
+        <div class="avatar-ring">
+          <div class="avatar-inner">
+            <span class="avatar-initials">CPM</span>
+          </div>
+        </div>
+        <div class="floating-badge badge-top">Open to Work 🟢</div>
+        <div class="floating-badge badge-bottom">Kenya 🇰🇪</div>
+      </div>
+    </div>
+    <div class="home-next container">
+      <span></span>
+      <button class="btn-back" onclick="showPage('about')">Next: About Me &#8594;</button>
+    </div>
+  </div>
+
+  <!-- ABOUT PAGE -->
+  <div class="page" id="page-about">
+    <div class="container page-inner">
+      <div class="page-header">
+        <p class="sec-eye">Who I Am</p>
+        <h2 class="sec-title">About Me</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-left">
+          <p class="about-intro">
+            I am Cyprian Paul Mang'ong'o, a 25-year-old ICT professional based in Kenya, holding a Bachelor of Science in Information Technology from Zetech University. I specialize in ICT technical support, network administration, and web development.
+          </p>
+          <p class="about-intro">
+            I have hands-on experience setting up and maintaining LAN infrastructure, installing and configuring CCTV systems, troubleshooting hardware and software issues, and providing end-user support. I am also a certified CCNA holder and have completed AI and Cybersecurity training through the ICT Authority of Kenya.
+          </p>
+          <p class="about-intro">
+            I bring a practical, problem-solving approach to every role I take on. Whether it is running cable across a building, setting up a database, or building a website from scratch, I focus on delivering work that functions reliably and meets the needs of the people using it.
+          </p>
+
+          <div class="about-details">
+            <div class="detail-row"><span class="detail-label">Full Name</span><span class="detail-val">Cyprian Paul Mang'ong'o</span></div>
+            <div class="detail-row"><span class="detail-label">Age</span><span class="detail-val">25 Years</span></div>
+            <div class="detail-row"><span class="detail-label">Gender</span><span class="detail-val">Male</span></div>
+            <div class="detail-row"><span class="detail-label">Location</span><span class="detail-val">Kenya</span></div>
+            <div class="detail-row"><span class="detail-label">Degree</span><span class="detail-val">BSc Information Technology</span></div>
+            <div class="detail-row"><span class="detail-label">University</span><span class="detail-val">Zetech University</span></div>
+            <div class="detail-row"><span class="detail-label">High School</span><span class="detail-val">Friends School Senende</span></div>
+            <div class="detail-row"><span class="detail-label">Email</span><span class="detail-val">mangongocyprian124@gmail.com</span></div>
+            <div class="detail-row"><span class="detail-label">Projects</span><span class="detail-val">8+ Completed</span></div>
+            <div class="detail-row"><span class="detail-label">Status</span><span class="detail-val status-open">Open to Work</span></div>
+          </div>
+
+          <div class="about-mini-stats">
+            <div class="mini-stat"><span class="mini-num">2+</span><span class="mini-label">Years Experience</span></div>
+            <div class="mini-stat"><span class="mini-num">8+</span><span class="mini-label">Projects</span></div>
+            <div class="mini-stat"><span class="mini-num">4</span><span class="mini-label">Certifications</span></div>
+          </div>
+        </div>
+
+        <!-- PHOTO SLOT -->
+        <div class="about-right">
+          <div class="picture-slot">
+            <!--
+              TO ADD YOUR PHOTO:
+              1. Put your photo file in this folder
+              2. Delete the picture-placeholder div below
+              3. Replace it with:
+              <img src="photo.jpeg" alt="Cyprian Paul Mang'ong'o" class="profile-photo" />
+            -->
+            <img src="photo.jpeg" alt="Cyprian Paul Mang'ong'o" class="profile-photo" />
+          </div>
+          <div class="picture-caption">Cyprian Paul Mang'ong'o</div>
+          <div class="picture-sub">ICT Support · Web Developer · Network Technician</div>
+        </div>
+      </div>
+      <div class="back-bar">
+        <button class="btn-back" onclick="showPage('home')">&#8592; Back to Home</button>
+        <button class="btn-back" onclick="showPage('skills')">Next: Skills &#8594;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILLS PAGE -->
+  <div class="page" id="page-skills">
+    <div class="container page-inner">
+      <div class="page-header">
+        <p class="sec-eye">What I Bring</p>
+        <h2 class="sec-title">Skills & Certifications</h2>
+        <p class="sec-desc">Technical competencies built through education, certification, and hands-on project work.</p>
+      </div>
+
+      <div class="skills-grid" id="skillsGrid"></div>
+
+      <!-- CERTIFICATIONS -->
+      <div class="cert-section">
+        <h3 class="cert-heading">Certifications</h3>
+        <div class="cert-grid" id="certGrid"></div>
+      </div>
+
+      <div class="back-bar">
+        <button class="btn-back" onclick="showPage('home')">&#8592; Back to Home</button>
+        <button class="btn-back" onclick="showPage('projects')">Next: Projects &#8594;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECTS PAGE -->
+  <div class="page" id="page-projects">
+    <div class="container page-inner">
+      <div class="page-header">
+        <p class="sec-eye">Work Samples</p>
+        <h2 class="sec-title">Featured Projects</h2>
+        <p class="sec-desc">Real projects completed during study, internship, and personal development.</p>
+      </div>
+      <div class="projects-grid" id="projectsGrid"></div>
+      <div class="back-bar">
+        <button class="btn-back" onclick="showPage('home')">&#8592; Back to Home</button>
+        <button class="btn-back" onclick="showPage('achievements')">Next: Achievements &#8594;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACHIEVEMENTS PAGE -->
+  <div class="page" id="page-achievements">
+    <div class="container page-inner">
+      <div class="page-header">
+        <p class="sec-eye">Track Record</p>
+        <h2 class="sec-title">Achievements</h2>
+        <p class="sec-desc">Key milestones and results from my professional and academic journey.</p>
+      </div>
+      <div class="achievements-list" id="achievementsList"></div>
+      <div class="back-bar">
+        <button class="btn-back" onclick="showPage('home')">&#8592; Back to Home</button>
+        <button class="btn-back" onclick="showPage('analyzer')">Next: Analyzer &#8594;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ANALYZER PAGE -->
+  <div class="page" id="page-analyzer">
+    <div class="container page-inner">
+      <div class="page-header">
+        <p class="sec-eye">Smart Tool</p>
+        <h2 class="sec-title">Portfolio Analyzer</h2>
+        <p class="sec-desc">Paste any company URL. The tool generates a tailored message showing how my skills match what that organization needs.</p>
+      </div>
+      <div class="analyzer-box">
+        <div class="input-group">
+          <input type="url" id="urlInput" class="url-input" placeholder="https://company-website.com" />
+          <button class="btn-primary" onclick="runAnalyzer()">Analyze &amp; Match</button>
+        </div>
+        <div class="analyzer-results" id="analyzerResults" style="display:none;">
+          <div class="result-header">
+            <span class="result-icon">✓</span>
+            <span id="resultDomain"></span>
+          </div>
+          <div class="result-cards" id="resultCards"></div>
+        </div>
+      </div>
+      <div class="back-bar">
+        <button class="btn-back" onclick="showPage('home')">&#8592; Back to Home</button>
+        <button class="btn-back" onclick="showPage('contact')">Next: Hire Me &#8594;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT PAGE -->
+  <div class="page" id="page-contact">
+    <div class="container page-inner">
+      <div class="page-header">
+        <p class="sec-eye">Let's Connect</p>
+        <h2 class="sec-title">Work with Me</h2>
+        <p class="sec-desc">Available for full-time roles, contract work, and project-based engagements in ICT support, networking, and web development.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p class="contact-body">I am actively looking for opportunities where I can apply my ICT skills in a real working environment. Whether it is network setup, technical support, or web development, I deliver reliable, practical results.</p>
+          <div class="contact-items">
+            <div class="contact-item"><span class="c-icon">📧</span><span>mangongocyprian124@gmail.com</span></div>
+            <div class="contact-item"><span class="c-icon">📍</span><span>Kenya</span></div>
+            <div class="contact-item"><span class="c-icon">📞</span><span>Call: +254796553598</span></div>
+            <div class="contact-item"><span class="c-icon">💬</span><span>WhatsApp: +254769612900</span></div>
+          
+            <div class="contact-item"><span class="c-icon">🟢</span><span>Currently Available</span></div>
+          </div>
+        </div>
+        <div class="thankyou-box">
+          <div class="thankyou-icon">🙏</div>
+          <h3 class="thankyou-title">Thank You for Visiting</h3>
+          <p class="thankyou-text">I appreciate you taking the time to go through my portfolio. I am actively looking for opportunities in ICT support, networking, and web development. If my skills match what you are looking for, I would love to hear from you. Reach out through any of the contacts on the left and I will get back to you within 24 hours.</p>
+        </div>
+      </div>
+      <div class="back-bar">
+        <button class="btn-back" onclick="showPage('home')">&#8592; Back to Home</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="nav-logo">CPM</span>
+      <p>© 2026 Cyprian Paul Mang'ong'o. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
