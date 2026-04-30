@@ -14,7 +14,7 @@ const skills = [
 const certifications = [
   { icon: "🏅", name: "CCNA — Cisco Certified Network Associate", issuer: "Cisco", date: "2025" },
   { icon: "🤖", name: "AI Training Certificate", issuer: "ICT Authority of Kenya", date: "2026" },
-  { icon: "🔒", name: "Cybersecurity Certificate", issuer: "[Add Issuing Body]", date: "2026" },
+  { icon: "🔒", name: "Cybersecurity Certificate", issuer: "ICT Authority of Kenya", date: "2026" },
   { icon: "🎓", name: "BSc Information Technology", issuer: "Zetech University", date: "2024" },
 ];
 
