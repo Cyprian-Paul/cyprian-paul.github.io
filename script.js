@@ -12,10 +12,10 @@ const skills = [
 
 /* ===== CERTIFICATIONS DATA ===== */
 const certifications = [
-  { icon: "🏅", name: "CCNA — Cisco Certified Network Associate", issuer: "Cisco", date: "2025" },
-  { icon: "🤖", name: "AI Training Certificate", issuer: "ICT Authority of Kenya", date: "2026" },
-  { icon: "🔒", name: "Cybersecurity Certificate", issuer: "ICT Authority of Kenya", date: "2026" },
-  { icon: "🎓", name: "BSc Information Technology", issuer: "Zetech University", date: "2024" },
+  { icon: "🌐", name: "CCNA: Switching, Routing & Wireless Essentials", issuer: "Cisco Networking Academy", date: "May 2025" },
+  { icon: "🛡️", name: "Cybersecurity Defense Analyst Pathway", issuer: "Cisco Networking Academy", date: "June 2026" },
+  { icon: "🔒", name: "Cybersecurity & Emerging Technologies Awareness", issuer: "ICT Authority Kenya", date: "June 2026" },
+  { icon: "🤖", name: "Artificial Intelligence Training", issuer: "ICT Authority Kenya", date: "April 2026" },
 ];
 
 /* ===== PROJECTS DATA ===== */
@@ -58,7 +58,7 @@ const projects = [
   },
 ];
 
-/* ===== ACHIEVEMENTS DATA — 9 TOTAL ===== */
+/* ===== ACHIEVEMENTS DATA ===== */
 const achievements = [
   {
     title: "Completed LAN Setup and CCTV Integration at Zetech University",
@@ -133,7 +133,7 @@ function renderSkills() {
   `).join("");
 }
 
-/* ===== RENDER CERTIFICATIONS ===== */
+/* ===== RENDER CERTIFICATIONS (Skills page mini cards) ===== */
 function renderCertifications() {
   document.getElementById("certGrid").innerHTML = certifications.map(c => `
     <div class="cert-card">
@@ -220,17 +220,28 @@ function runAnalyzer() {
   document.getElementById("analyzerResults").style.display = "block";
 }
 
-/* ===== CONTACT FORM WITH EMAILJS =====
-   SETUP STEPS:
-   1. Go to https://www.emailjs.com and sign up free
-   2. Click "Add New Service", choose Gmail, connect mangongocyprian124@gmail.com
-      Copy the Service ID and paste it below where it says YOUR_SERVICE_ID
-   3. Click "Email Templates", create a template, copy the Template ID
-      Paste it below where it says YOUR_TEMPLATE_ID
-   4. Click your profile > Account, copy your Public Key
-      Paste it below where it says YOUR_PUBLIC_KEY
-   5. Save and upload to GitHub — messages will arrive in your Gmail
-================================================ */
+/* ===== CERT MODAL ===== */
+function openCertModal(title, issuer) {
+  document.getElementById("certModalTitle").textContent = title;
+  document.getElementById("certModalIssuer").textContent = issuer;
+  document.getElementById("certModal").classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+
+function closeCertModal() {
+  document.getElementById("certModal").classList.remove("open");
+  document.body.style.overflow = "";
+}
+
+function handleCertOverlay(e) {
+  if (e.target === document.getElementById("certModal")) closeCertModal();
+}
+
+document.addEventListener("keydown", function(e) {
+  if (e.key === "Escape") closeCertModal();
+});
+
+/* ===== CONTACT FORM WITH EMAILJS ===== */
 const EMAILJS_SERVICE_ID  = "YOUR_SERVICE_ID";
 const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
 const EMAILJS_PUBLIC_KEY  = "YOUR_PUBLIC_KEY";
