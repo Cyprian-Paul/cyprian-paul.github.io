@@ -9,7 +9,6 @@
 </head>
 <body>
 
-  <!-- Dark overlay over wallpaper -->
   <div class="overlay"></div>
 
   <!-- NAV -->
@@ -22,6 +21,7 @@
         <li><a href="#" onclick="showPage('skills')">Skills</a></li>
         <li><a href="#" onclick="showPage('projects')">Projects</a></li>
         <li><a href="#" onclick="showPage('achievements')">Achievements</a></li>
+        <li><a href="#" onclick="showPage('certifications')">Certifications</a></li>
         <li><a href="#" onclick="showPage('analyzer')">Analyze</a></li>
         <li><a href="#" onclick="showPage('contact')" class="nav-cta">Hire Me</a></li>
       </ul>
@@ -54,6 +54,7 @@
           <button class="btn-ghost" onclick="showPage('skills')">Skills</button>
           <button class="btn-ghost" onclick="showPage('projects')">Projects</button>
           <button class="btn-ghost" onclick="showPage('achievements')">Achievements</button>
+          <button class="btn-ghost" onclick="showPage('certifications')">Certifications</button>
           <button class="btn-ghost" onclick="showPage('analyzer')">Analyzer</button>
           <button class="btn-cta" onclick="showPage('contact')">Hire Me</button>
         </div>
@@ -69,8 +70,8 @@
           </div>
           <div class="stat-divider"></div>
           <div class="stat">
-            <span class="stat-num" data-target="15" data-suffix="+">0</span>
-            <span class="stat-label">Skills</span>
+            <span class="stat-num" data-target="4" data-suffix="">0</span>
+            <span class="stat-label">Certifications</span>
           </div>
         </div>
       </div>
@@ -129,16 +130,8 @@
           </div>
         </div>
 
-        <!-- PHOTO SLOT -->
         <div class="about-right">
           <div class="picture-slot">
-            <!--
-              TO ADD YOUR PHOTO:
-              1. Put your photo file in this folder
-              2. Delete the picture-placeholder div below
-              3. Replace it with:
-              <img src="photo.jpeg" alt="Cyprian Paul Mang'ong'o" class="profile-photo" />
-            -->
             <img src="photo.jpeg" alt="Cyprian Paul Mang'ong'o" class="profile-photo" />
           </div>
           <div class="picture-caption">Cyprian Paul Mang'ong'o</div>
@@ -163,7 +156,6 @@
 
       <div class="skills-grid" id="skillsGrid"></div>
 
-      <!-- CERTIFICATIONS -->
       <div class="cert-section">
         <h3 class="cert-heading">Certifications</h3>
         <div class="cert-grid" id="certGrid"></div>
@@ -203,8 +195,119 @@
       <div class="achievements-list" id="achievementsList"></div>
       <div class="back-bar">
         <button class="btn-back" onclick="showPage('home')">&#8592; Back to Home</button>
+        <button class="btn-back" onclick="showPage('certifications')">Next: Certifications &#8594;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CERTIFICATIONS PAGE -->
+  <div class="page" id="page-certifications">
+    <div class="container page-inner">
+      <div class="page-header">
+        <p class="sec-eye">Credentials</p>
+        <h2 class="sec-title">Certifications</h2>
+        <p class="sec-desc">Formal credentials completed across networking, cybersecurity, and emerging technology.</p>
+      </div>
+
+      <div class="cert-full-grid">
+
+        <div class="cert-full-card">
+          <div class="cert-full-icon">🌐</div>
+          <div class="cert-full-body">
+            <h3 class="cert-full-name">CCNA: Switching, Routing & Wireless Essentials</h3>
+            <p class="cert-full-issuer">Cisco Networking Academy</p>
+            <p class="cert-full-desc">Covers VLANs, inter-VLAN routing, STP, EtherChannel, OSPF, DHCPv4/v6, and wireless LAN for enterprise networks.</p>
+            <div class="cert-full-tags">
+              <span>Routing & Switching</span>
+              <span>VLANs</span>
+              <span>OSPF</span>
+              <span>Wireless LAN</span>
+            </div>
+            <button class="cert-view-btn" onclick="openCertModal('CCNA: Switching, Routing & Wireless Essentials', 'Cisco Networking Academy')">📄 View Certificate</button>
+          </div>
+          <div class="cert-full-meta">
+            <span class="cert-full-date">May 2025</span>
+            <span class="cert-full-badge">Active</span>
+          </div>
+        </div>
+
+        <div class="cert-full-card">
+          <div class="cert-full-icon">🛡️</div>
+          <div class="cert-full-body">
+            <h3 class="cert-full-name">Cybersecurity Defense Analyst Pathway</h3>
+            <p class="cert-full-issuer">Cisco Networking Academy</p>
+            <p class="cert-full-desc">Covers threat monitoring, SOC operations, log analysis, incident triage, and defensive security strategies.</p>
+            <div class="cert-full-tags">
+              <span>Threat Detection</span>
+              <span>Incident Response</span>
+              <span>SOC Operations</span>
+              <span>Log Analysis</span>
+            </div>
+            <button class="cert-view-btn" onclick="openCertModal('Cybersecurity Defense Analyst Pathway', 'Cisco Networking Academy')">📄 View Certificate</button>
+          </div>
+          <div class="cert-full-meta">
+            <span class="cert-full-date">June 2026</span>
+            <span class="cert-full-badge">Active</span>
+          </div>
+        </div>
+
+        <div class="cert-full-card">
+          <div class="cert-full-icon">🔒</div>
+          <div class="cert-full-body">
+            <h3 class="cert-full-name">Cybersecurity and Emerging Technologies Awareness</h3>
+            <p class="cert-full-issuer">ICT Authority Kenya</p>
+            <p class="cert-full-desc">Government-accredited programme covering cybersecurity best practices, emerging technology risks, and digital safety.</p>
+            <div class="cert-full-tags">
+              <span>Cybersecurity Awareness</span>
+              <span>Emerging Technologies</span>
+              <span>Digital Safety</span>
+            </div>
+            <button class="cert-view-btn" onclick="openCertModal('Cybersecurity and Emerging Technologies Awareness', 'ICT Authority Kenya')">📄 View Certificate</button>
+          </div>
+          <div class="cert-full-meta">
+            <span class="cert-full-date">June 2026</span>
+            <span class="cert-full-badge">Active</span>
+          </div>
+        </div>
+
+        <div class="cert-full-card">
+          <div class="cert-full-icon">🤖</div>
+          <div class="cert-full-body">
+            <h3 class="cert-full-name">Artificial Intelligence Training</h3>
+            <p class="cert-full-issuer">ICT Authority Kenya</p>
+            <p class="cert-full-desc">Accredited training covering AI fundamentals, machine learning concepts, and practical AI applications in the digital economy.</p>
+            <div class="cert-full-tags">
+              <span>Artificial Intelligence</span>
+              <span>Machine Learning</span>
+              <span>AI Applications</span>
+            </div>
+            <button class="cert-view-btn" onclick="openCertModal('Artificial Intelligence Training', 'ICT Authority Kenya')">📄 View Certificate</button>
+          </div>
+          <div class="cert-full-meta">
+            <span class="cert-full-date">April 2026</span>
+            <span class="cert-full-badge">Active</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="back-bar">
+        <button class="btn-back" onclick="showPage('achievements')">&#8592; Back to Achievements</button>
         <button class="btn-back" onclick="showPage('analyzer')">Next: Analyzer &#8594;</button>
       </div>
+    </div>
+  </div>
+
+  <!-- CERT MODAL -->
+  <div class="cert-modal-overlay" id="certModal" onclick="handleCertOverlay(event)">
+    <div class="cert-modal-box">
+      <h3 id="certModalTitle"></h3>
+      <p id="certModalIssuer"></p>
+      <div class="cert-modal-placeholder">
+        <div class="cert-modal-icon">📄</div>
+        <p>Certificate document not yet uploaded. Check back soon.</p>
+      </div>
+      <button class="btn-back" onclick="closeCertModal()">Close</button>
     </div>
   </div>
 
@@ -252,7 +355,6 @@
             <div class="contact-item"><span class="c-icon">📍</span><span>Kenya</span></div>
             <div class="contact-item"><span class="c-icon">📞</span><span>Call: +254796553598</span></div>
             <div class="contact-item"><span class="c-icon">💬</span><span>WhatsApp: +254769612900</span></div>
-          
             <div class="contact-item"><span class="c-icon">🟢</span><span>Currently Available</span></div>
           </div>
         </div>
