@@ -34,7 +34,7 @@ const projects = [
     desc: "An infrastructure management platform for tracking and managing ICT assets, network devices, and system statuses across an organisation.",
     outcome: "Fully deployed and live.",
     link: "https://cyprian-paul.github.io/NetPulse-ICT",
-    demo: null
+    demo: { label: "Username", username: "admin", password: "admin123" }
   },
   {
     tag: "Networking · Infrastructure",
