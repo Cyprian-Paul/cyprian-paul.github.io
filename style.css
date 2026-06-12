@@ -290,13 +290,14 @@ body {
 .demo-row {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .demo-key {
   font-size: 12px;
   color: var(--white-50);
-  min-width: 64px;
+  min-width: 80px;
+  flex-shrink: 0;
 }
 
 .demo-val {
