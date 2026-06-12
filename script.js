@@ -1,13 +1,13 @@
 /* ===== SKILLS DATA ===== */
 const skills = [
-  { icon: "🌐", name: "Network Administration", desc: "LAN setup, IP configuration, DHCP, DNS, and structured cabling across real environments.", level: 85 },
+  { icon: "🌐", name: "Network Administration", desc: "LAN/WAN setup, IP configuration, DHCP, DNS, Wi-Fi, structured cabling, and PRTG network monitoring.", level: 85 },
   { icon: "🔧", name: "Hardware Troubleshooting", desc: "Diagnosing and repairing desktops, laptops, printers, and peripheral devices.", level: 88 },
-  { icon: "🖥️", name: "ICT Technical Support", desc: "End-user support, OS installation, software configuration, and remote assistance.", level: 90 },
-  { icon: "💻", name: "Web Development", desc: "Building websites using HTML, CSS, JavaScript, and React. Deployed on Hostinger and GitHub Pages.", level: 80 },
+  { icon: "🖥️", name: "ICT Technical Support", desc: "First-level support, OS installation, Microsoft 365 administration, Active Directory, and remote assistance.", level: 90 },
+  { icon: "💻", name: "Web Development", desc: "Building websites using HTML, CSS, JavaScript, React, and Python. Deployed on GitHub Pages.", level: 80 },
   { icon: "🗄️", name: "Database Management", desc: "Designing and managing MySQL databases, writing queries, and handling data for applications.", level: 75 },
-  { icon: "🔐", name: "Cybersecurity Fundamentals", desc: "Network security principles, threat identification, and safe system configuration practices.", level: 78 },
+  { icon: "🔐", name: "Cybersecurity", desc: "Cybersecurity defence analysis, threat awareness, endpoint protection, and secure system configuration.", level: 78 },
   { icon: "📷", name: "CCTV Installation", desc: "Installing, configuring, and integrating CCTV systems into existing network infrastructure.", level: 82 },
-  { icon: "👩‍🏫", name: "User Training", desc: "Training staff and end users on ICT systems, software tools, and best practices.", level: 84 },
+  { icon: "👩‍🏫", name: "User Training", desc: "Training staff and end users on ICT systems, Microsoft 365, and software tools at all skill levels.", level: 84 },
 ];
 
 /* ===== CERTIFICATIONS DATA ===== */
@@ -21,25 +21,18 @@ const certifications = [
 /* ===== PROJECTS DATA ===== */
 const projects = [
   {
+    tag: "Helpdesk · Web App",
+    title: "ResolveIQ — IT Helpdesk Ticketing System",
+    desc: "A live helpdesk system with ticket submission, SLA tracking, priority filtering, and CSV export. Built with React, FastAPI, and MySQL with JWT authentication and role-based access.",
+    outcome: "Live and deployed. Demo: admin@company.com / admin123",
+    link: "https://cyprian-paul.github.io/ResolveIQ"
+  },
+  {
     tag: "Networking · Monitoring",
     title: "NodeScan — Network Monitoring Dashboard",
-    desc: "A live network monitoring dashboard that scans nodes, tracks uptime, and visualises network health in real time. Built with a focus on ICT infrastructure visibility.",
-    outcome: "Live at cyprian-paul.github.io — fully deployed with real-time node scanning and status display.",
-    link: "https://cyprian-paul.github.io"
-  },
-  {
-    tag: "ICT · Infrastructure",
-    title: "NetPulse — ICT Infrastructure Management",
-    desc: "An infrastructure management tool for tracking and managing ICT assets, network devices, and system statuses across an organisation.",
-    outcome: "Deployed portfolio project demonstrating end-to-end infrastructure management capabilities.",
-    link: "https://cyprian-paul.github.io"
-  },
-  {
-    tag: "Helpdesk · Web App",
-    title: "ResolveIQ — Helpdesk Ticketing System",
-    desc: "A full-stack helpdesk ticketing system built with React, FastAPI, and MySQL. Includes JWT authentication, ticket creation, assignment, and status tracking.",
-    outcome: "Complete working system with user auth, ticket lifecycle management, and admin dashboard.",
-    link: "https://cyprian-paul.github.io"
+    desc: "A real-time dashboard tracking device status, uptime, active alerts, and network events. Built for ICT teams needing live infrastructure visibility.",
+    outcome: "Live and deployed. Demo: admin / admin123",
+    link: "https://cyprian-paul.github.io/NodeScan"
   },
   {
     tag: "Networking · Infrastructure",
