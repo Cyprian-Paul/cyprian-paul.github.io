@@ -21,40 +21,46 @@ const certifications = [
 /* ===== PROJECTS DATA ===== */
 const projects = [
   {
+    tag: "Networking · Monitoring",
+    title: "NodeScan — Network Monitoring Dashboard",
+    desc: "A live network monitoring dashboard that scans nodes, tracks uptime, and visualises network health in real time. Built with a focus on ICT infrastructure visibility.",
+    outcome: "Live at cyprian-paul.github.io — fully deployed with real-time node scanning and status display.",
+    link: "https://cyprian-paul.github.io"
+  },
+  {
+    tag: "ICT · Infrastructure",
+    title: "NetPulse — ICT Infrastructure Management",
+    desc: "An infrastructure management tool for tracking and managing ICT assets, network devices, and system statuses across an organisation.",
+    outcome: "Deployed portfolio project demonstrating end-to-end infrastructure management capabilities.",
+    link: "https://cyprian-paul.github.io"
+  },
+  {
+    tag: "Helpdesk · Web App",
+    title: "ResolveIQ — Helpdesk Ticketing System",
+    desc: "A full-stack helpdesk ticketing system built with React, FastAPI, and MySQL. Includes JWT authentication, ticket creation, assignment, and status tracking.",
+    outcome: "Complete working system with user auth, ticket lifecycle management, and admin dashboard.",
+    link: "https://cyprian-paul.github.io"
+  },
+  {
     tag: "Networking · Infrastructure",
     title: "LAN Setup and Cabling — Zetech University",
     desc: "Planned, installed, and tested a structured LAN cabling system across a building at Zetech University. Configured switches, IP addressing, and verified connectivity across all nodes.",
-    outcome: "Fully functional LAN with documented network diagram and tested connectivity on all ports."
+    outcome: "Fully functional LAN with documented network diagram and tested connectivity on all ports.",
+    link: null
   },
   {
     tag: "Security · Networking",
     title: "CCTV Integration Project — Zetech University",
     desc: "Installed and configured a CCTV surveillance system integrated into the existing campus network. Set up camera positioning, DVR configuration, and remote monitoring access.",
-    outcome: "Live monitoring system covering key areas with remote access configured for security personnel."
-  },
-  {
-    tag: "Web Development",
-    title: "Personal Portfolio Website",
-    desc: "Designed and built this portfolio from scratch using HTML, CSS, and JavaScript. Deployed on GitHub Pages with mobile-responsive design and page navigation.",
-    outcome: "Live at https://cyprian-paul.github.io — fully responsive with contact form and project showcase."
-  },
-  {
-    tag: "Database · Backend",
-    title: "MySQL Database Project",
-    desc: "Designed a relational database schema for a student records system. Wrote SQL queries for data entry, retrieval, updating, and reporting.",
-    outcome: "Fully normalized database with working queries covering CRUD operations and report generation."
+    outcome: "Live monitoring system covering key areas with remote access configured for security personnel.",
+    link: null
   },
   {
     tag: "AI · Developer Tools",
     title: "AI-Powered Code Review Assistant",
-    desc: "Built a web tool that analyzes pasted code or GitHub PR diffs for security vulnerabilities, performance issues, and architecture problems.",
-    outcome: "Live tool with multi-language support, severity scoring, and downloadable analysis reports."
-  },
-  {
-    tag: "Web · JavaScript",
-    title: "VideoToBlog Converter",
-    desc: "Built a SaaS-style web app that takes a YouTube URL and uses AI to generate a full SEO-optimized blog post from the video content.",
-    outcome: "Working AI-powered content tool with dark UI, spinner feedback, and one-click copy to clipboard."
+    desc: "Built a web tool that analyses pasted code or GitHub PR diffs for security vulnerabilities, performance issues, and architecture problems.",
+    outcome: "Live tool with multi-language support, severity scoring, and downloadable analysis reports.",
+    link: "https://cyprian-paul.github.io"
   },
 ];
 
@@ -65,32 +71,28 @@ const achievements = [
     desc: "Hands-on infrastructure work including structured cabling, switch configuration, IP setup, and CCTV system integration during attachment at Zetech University."
   },
   {
-    title: "Earned CCNA Certification from Cisco",
-    desc: "Passed the Cisco Certified Network Associate exam, demonstrating competency in network fundamentals, IP connectivity, security, and automation."
+    title: "Earned CCNA: Switching, Routing & Wireless Essentials — Cisco",
+    desc: "Completed the Cisco Networking Academy CCNA course covering VLANs, routing protocols, wireless LAN, and enterprise network configuration."
+  },
+  {
+    title: "Completed Cybersecurity Defense Analyst Pathway — Cisco",
+    desc: "Trained in threat monitoring, SOC operations, log analysis, and incident response through Cisco Networking Academy."
   },
   {
     title: "Completed AI Training — ICT Authority of Kenya",
     desc: "Completed a government-backed AI training programme covering machine learning fundamentals, AI tools, and practical applications in the Kenyan digital economy."
   },
   {
-    title: "Completed Cybersecurity Certificate",
-    desc: "Trained in cybersecurity fundamentals including threat identification, network security, secure system configuration, and incident response basics."
+    title: "Completed Cybersecurity & Emerging Technologies Awareness — ICT Authority Kenya",
+    desc: "Government-accredited programme covering cybersecurity best practices, emerging technology risks, and digital safety in Kenya's ICT landscape."
   },
   {
-    title: "Built and deployed 8 end-to-end AI and ICT projects",
-    desc: "Each project was independently scoped, built, and shipped — covering computer vision, MLOps, NLP, RAG, networking infrastructure, and web development."
+    title: "Built and deployed 6+ end-to-end ICT and AI projects",
+    desc: "Each project was independently scoped, built, and deployed — covering network monitoring, helpdesk systems, infrastructure management, and AI-powered web tools."
   },
   {
-    title: "Mastered the full AI product lifecycle",
-    desc: "From data collection and model training to deployment, monitoring, and feedback loops. Projects include production-grade features: rate limiting, CI/CD, and automated testing."
-  },
-  {
-    title: "Integrated AI meaningfully across multiple domains",
-    desc: "Applied GPT-4o Vision, fine-tuned ResNet models, built RAG pipelines, and implemented model gateways routing across OpenAI, Anthropic, and DeepSeek."
-  },
-  {
-    title: "Shipped mobile-friendly AI apps used by real users",
-    desc: "Deployed multiple apps on Vercel with FastAPI and Express.js backends, Twilio SMS integration, S3 storage, and continuous learning feedback loops."
+    title: "Deployed three live portfolio projects on GitHub Pages",
+    desc: "NodeScan, NetPulse, and ResolveIQ are all publicly accessible, demonstrating full-stack development, networking, and IT support system skills."
   },
   {
     title: "Graduated with BSc Information Technology — Zetech University",
@@ -106,6 +108,12 @@ function showPage(name) {
     target.classList.add("active");
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
+
+  // Update active nav link
+  document.querySelectorAll(".nav-links a").forEach(a => a.classList.remove("nav-active"));
+  const activeLink = document.querySelector(`.nav-links a[data-page="${name}"]`);
+  if (activeLink) activeLink.classList.add("nav-active");
+
   if (name === "skills") {
     setTimeout(() => {
       document.querySelectorAll(".skill-bar-fill").forEach(bar => {
@@ -113,15 +121,19 @@ function showPage(name) {
       });
     }, 120);
   }
+
+  // Close mobile nav
   const links = document.querySelector(".nav-links");
-  if (links.style.display === "flex" && window.innerWidth < 640) {
+  if (links && links.style.display === "flex" && window.innerWidth < 640) {
     links.style.display = "";
   }
 }
 
 /* ===== RENDER SKILLS ===== */
 function renderSkills() {
-  document.getElementById("skillsGrid").innerHTML = skills.map(s => `
+  const grid = document.getElementById("skillsGrid");
+  if (!grid) return;
+  grid.innerHTML = skills.map(s => `
     <div class="skill-card">
       <div class="skill-icon">${s.icon}</div>
       <div class="skill-name">${s.name}</div>
@@ -135,7 +147,9 @@ function renderSkills() {
 
 /* ===== RENDER CERTIFICATIONS (Skills page mini cards) ===== */
 function renderCertifications() {
-  document.getElementById("certGrid").innerHTML = certifications.map(c => `
+  const grid = document.getElementById("certGrid");
+  if (!grid) return;
+  grid.innerHTML = certifications.map(c => `
     <div class="cert-card">
       <div class="cert-icon">${c.icon}</div>
       <div class="cert-name">${c.name}</div>
@@ -147,19 +161,24 @@ function renderCertifications() {
 
 /* ===== RENDER PROJECTS ===== */
 function renderProjects() {
-  document.getElementById("projectsGrid").innerHTML = projects.map(p => `
+  const grid = document.getElementById("projectsGrid");
+  if (!grid) return;
+  grid.innerHTML = projects.map(p => `
     <div class="project-card">
       <span class="project-tag">${p.tag}</span>
       <div class="project-title">${p.title}</div>
       <div class="project-desc">${p.desc}</div>
       <div class="project-outcome">✓ ${p.outcome}</div>
+      ${p.link ? `<a href="${p.link}" target="_blank" rel="noopener" class="project-link">View Project →</a>` : ""}
     </div>
   `).join("");
 }
 
 /* ===== RENDER ACHIEVEMENTS ===== */
 function renderAchievements() {
-  document.getElementById("achievementsList").innerHTML = achievements.map((a, i) => `
+  const list = document.getElementById("achievementsList");
+  if (!list) return;
+  list.innerHTML = achievements.map((a, i) => `
     <div class="achievement-item">
       <div class="achievement-num">0${i + 1}</div>
       <div class="achievement-content">
@@ -190,14 +209,16 @@ const analyzerMap = {
   network: { label: "Networking Fit", text: "I hold a CCNA certification and have hands-on experience with LAN setup, IP configuration, and structured cabling from real projects at Zetech University." },
   ict: { label: "ICT Support Fit", text: "ICT technical support is my core specialty. I have provided hardware troubleshooting, OS installation, user training, and end-user support in real environments." },
   tech: { label: "Tech Environment Fit", text: "I am comfortable in fast-moving tech environments. I adapt quickly to new tools, systems, and workflows and have experience with both hardware and software sides of ICT." },
-  security: { label: "Cybersecurity Fit", text: "I have completed cybersecurity training covering threat identification, network security, and secure system configuration." },
-  web: { label: "Web Development Fit", text: "I build websites using HTML, CSS, JavaScript, and React. I have deployed sites on GitHub Pages and Hostinger and understand both front-end design and back-end basics." },
-  host: { label: "Hosting & CMS Fit", text: "I have experience with Hostinger, GitHub Pages, cPanel, and static site deployment. I understand domain setup, file management, and web hosting workflows." },
+  security: { label: "Cybersecurity Fit", text: "I have completed two cybersecurity certifications covering threat identification, network security, SOC operations, and secure system configuration." },
+  web: { label: "Web Development Fit", text: "I build websites using HTML, CSS, JavaScript, and React. I have deployed sites on GitHub Pages and understand both front-end design and back-end basics." },
+  host: { label: "Hosting & CMS Fit", text: "I have experience with GitHub Pages, cPanel, and static site deployment. I understand domain setup, file management, and web hosting workflows." },
+  isp: { label: "ISP / NOC Fit", text: "My CCNA training in routing, switching, and wireless, combined with hands-on LAN infrastructure work, makes me ready for NOC and ISP support roles." },
+  support: { label: "Support Role Fit", text: "End-user support is where I started. I have provided helpdesk, hardware, software, and remote support in real working environments." },
 };
 
 const defaultCards = [
   { label: "Core Value I Bring", text: "I combine practical ICT skills with real project experience. I have cabled networks, installed CCTV systems, and built working web applications." },
-  { label: "Why I Stand Out", text: "I hold a CCNA, an AI certificate from the ICT Authority, and a BSc in IT. I bring both certification depth and hands-on execution to every role." },
+  { label: "Why I Stand Out", text: "I hold a CCNA, two ICT Authority certifications, and a BSc in IT. I bring both certification depth and hands-on execution to every role." },
   { label: "What I Can Deliver", text: "From day one I can support users, troubleshoot hardware, set up network infrastructure, or contribute to web development depending on what your team needs most." },
 ];
 
@@ -237,11 +258,15 @@ function handleCertOverlay(e) {
   if (e.target === document.getElementById("certModal")) closeCertModal();
 }
 
-document.addEventListener("keydown", function(e) {
-  if (e.key === "Escape") closeCertModal();
-});
-
-/* ===== CONTACT FORM WITH EMAILJS ===== */
+/* ===== CONTACT FORM WITH EMAILJS =====
+   SETUP STEPS:
+   1. Go to https://www.emailjs.com and sign up free
+   2. Add New Service, choose Gmail, connect mangongocyprian124@gmail.com
+      Copy the Service ID below
+   3. Create a template, copy the Template ID below
+   4. Copy your Public Key from Account settings below
+   5. Save and upload to GitHub
+================================================ */
 const EMAILJS_SERVICE_ID  = "YOUR_SERVICE_ID";
 const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
 const EMAILJS_PUBLIC_KEY  = "YOUR_PUBLIC_KEY";
@@ -288,19 +313,35 @@ function sendMessage() {
   });
 }
 
-/* ===== HAMBURGER ===== */
-document.getElementById("hamburger").addEventListener("click", () => {
-  const links = document.querySelector(".nav-links");
-  if (links.style.display === "flex") {
-    links.style.display = "";
-  } else {
-    links.style.cssText = "display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:rgba(5,13,31,0.97);padding:16px 24px;border-bottom:1px solid rgba(255,255,255,0.10);gap:4px;z-index:99;";
-  }
-});
+/* ===== INIT — wrapped in DOMContentLoaded to prevent crash ===== */
+document.addEventListener("DOMContentLoaded", function () {
 
-/* ===== INIT ===== */
-renderSkills();
-renderCertifications();
-renderProjects();
-renderAchievements();
-animateCounters();
+  // Hamburger menu
+  const hamburger = document.getElementById("hamburger");
+  if (hamburger) {
+    hamburger.addEventListener("click", () => {
+      const links = document.querySelector(".nav-links");
+      if (links.style.display === "flex") {
+        links.style.display = "";
+      } else {
+        links.style.cssText = "display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:rgba(5,13,31,0.97);padding:16px 24px;border-bottom:1px solid rgba(255,255,255,0.10);gap:4px;z-index:99;";
+      }
+    });
+  }
+
+  // Close modal on Escape key
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeCertModal();
+  });
+
+  // Render all sections
+  renderSkills();
+  renderCertifications();
+  renderProjects();
+  renderAchievements();
+  animateCounters();
+
+  // Set home as active nav link on load
+  const homeLink = document.querySelector('.nav-links a[data-page="home"]');
+  if (homeLink) homeLink.classList.add("nav-active");
+});
