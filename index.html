@@ -16,14 +16,14 @@
     <div class="nav-inner">
       <span class="nav-logo" onclick="showPage('home')">CPM</span>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#" data-page="home"    onclick="showPage('home')">Home</a></li>
-        <li><a href="#" data-page="about"   onclick="showPage('about')">About</a></li>
-        <li><a href="#" data-page="skills"  onclick="showPage('skills')">Skills</a></li>
-        <li><a href="#" data-page="projects" onclick="showPage('projects')">Projects</a></li>
-        <li><a href="#" data-page="achievements" onclick="showPage('achievements')">Achievements</a></li>
+        <li><a href="#" data-page="home"           onclick="showPage('home')">Home</a></li>
+        <li><a href="#" data-page="about"          onclick="showPage('about')">About</a></li>
+        <li><a href="#" data-page="skills"         onclick="showPage('skills')">Skills</a></li>
+        <li><a href="#" data-page="projects"       onclick="showPage('projects')">Projects</a></li>
+        <li><a href="#" data-page="achievements"   onclick="showPage('achievements')">Achievements</a></li>
         <li><a href="#" data-page="certifications" onclick="showPage('certifications')">Certifications</a></li>
-        <li><a href="#" data-page="analyzer" onclick="showPage('analyzer')">Analyze</a></li>
-        <li><a href="#" data-page="contact" onclick="showPage('contact')" class="nav-cta">Hire Me</a></li>
+        <li><a href="#" data-page="analyzer"       onclick="showPage('analyzer')">Analyze</a></li>
+        <li><a href="#" data-page="contact"        onclick="showPage('contact')" class="nav-cta">Hire Me</a></li>
       </ul>
       <button class="hamburger" id="hamburger">&#9776;</button>
     </div>
@@ -47,7 +47,7 @@
           <span class="profession-tag">Network Technician</span>
         </p>
         <p class="home-welcome">
-          Welcome! I am a certified ICT professional based in Kenya. I set up networks, build websites, troubleshoot hardware and software, and support users across real working environments.
+          Welcome! I am a certified ICT professional based in Kenya. I set up networks, build websites, troubleshoot hardware and software, and support users across real working environments. Explore my work, skills, and projects below.
         </p>
         <div class="home-buttons">
           <button class="btn-primary" onclick="showPage('about')">About Me</button>
@@ -70,7 +70,7 @@
           </div>
           <div class="stat-divider"></div>
           <div class="stat">
-            <span class="stat-num" data-target="4" data-suffix="">0</span>
+            <span class="stat-num" data-target="5" data-suffix="">0</span>
             <span class="stat-label">Certifications</span>
           </div>
         </div>
@@ -107,7 +107,7 @@
             I have hands-on experience setting up and maintaining LAN infrastructure, installing and configuring CCTV systems, troubleshooting hardware and software issues, and providing end-user support. I am also a certified CCNA holder and have completed AI and Cybersecurity training through the ICT Authority of Kenya.
           </p>
           <p class="about-intro">
-            I bring a practical, problem-solving approach to every role I take on. Whether it is running cable across a building, setting up a database, or building a website from scratch, I focus on delivering work that functions reliably.
+            I bring a practical, problem-solving approach to every role I take on. Whether it is running cable across a building, setting up a database, or building a website from scratch, I focus on delivering work that functions reliably and meets the needs of the people using it.
           </p>
 
           <div class="about-details">
@@ -121,14 +121,14 @@
             <div class="detail-row"><span class="detail-label">KCSE</span><span class="detail-val">2017 – 2021</span></div>
             <div class="detail-row"><span class="detail-label">Email</span><span class="detail-val">mangongocyprian124@gmail.com</span></div>
             <div class="detail-row"><span class="detail-label">GitHub</span><span class="detail-val"><a href="https://github.com/Cyprian-Paul" target="_blank" rel="noopener" class="detail-link">github.com/Cyprian-Paul</a></span></div>
-            <div class="detail-row"><span class="detail-label">Projects</span><span class="detail-val">6+ Completed</span></div>
+            <div class="detail-row"><span class="detail-label">Projects</span><span class="detail-val">5+ Completed</span></div>
             <div class="detail-row"><span class="detail-label">Status</span><span class="detail-val status-open">Open to Work</span></div>
           </div>
 
           <div class="about-mini-stats">
             <div class="mini-stat"><span class="mini-num">2+</span><span class="mini-label">Years Experience</span></div>
             <div class="mini-stat"><span class="mini-num">5+</span><span class="mini-label">Projects</span></div>
-            <div class="mini-stat"><span class="mini-num">4</span><span class="mini-label">Certifications</span></div>
+            <div class="mini-stat"><span class="mini-num">5</span><span class="mini-label">Certifications</span></div>
           </div>
         </div>
 
@@ -138,7 +138,6 @@
           </div>
           <div class="picture-caption">Cyprian Paul Mang'ong'o</div>
           <div class="picture-sub">ICT Support · Web Developer · Network Technician</div>
-          <!-- CV DOWNLOAD -->
           <a href="Cyprian_Paul_CV.pdf" download class="btn-cv">⬇ Download CV</a>
         </div>
       </div>
@@ -149,19 +148,15 @@
     </div>
   </div>
 
-  <!-- SKILLS PAGE -->
+  <!-- SKILLS PAGE — no certifications here -->
   <div class="page" id="page-skills">
     <div class="container page-inner">
       <div class="page-header">
         <p class="sec-eye">What I Bring</p>
-        <h2 class="sec-title">Skills & Certifications</h2>
+        <h2 class="sec-title">Skills</h2>
         <p class="sec-desc">Technical competencies built through education, certification, and hands-on project work.</p>
       </div>
       <div class="skills-grid" id="skillsGrid"></div>
-      <div class="cert-section">
-        <h3 class="cert-heading">Certifications</h3>
-        <div class="cert-grid" id="certGrid"></div>
-      </div>
       <div class="back-bar">
         <button class="btn-back" onclick="showPage('home')">&#8592; Back to Home</button>
         <button class="btn-back" onclick="showPage('projects')">Next: Projects &#8594;</button>
@@ -216,12 +211,10 @@
           <div class="cert-full-icon">🌐</div>
           <div class="cert-full-body">
             <h3 class="cert-full-name">CCNA: Switching, Routing & Wireless Essentials</h3>
-            <p class="cert-full-issuer">Cisco Networking Academy</p>
+            <p class="cert-full-issuer">Cisco Networking Academy · Zetech University</p>
             <p class="cert-full-desc">Covers VLANs, inter-VLAN routing, STP, EtherChannel, OSPF, DHCPv4/v6, and wireless LAN for enterprise networks.</p>
-            <div class="cert-full-tags">
-              <span>Routing & Switching</span><span>VLANs</span><span>OSPF</span><span>Wireless LAN</span>
-            </div>
-            <button class="cert-view-btn" onclick="openCertModal('CCNA: Switching, Routing & Wireless Essentials', 'Cisco Networking Academy')">📄 View Certificate</button>
+            <div class="cert-full-tags"><span>Routing & Switching</span><span>VLANs</span><span>OSPF</span><span>Wireless LAN</span></div>
+            <a class="cert-view-btn" href="cert-ccna.pdf" target="_blank" rel="noopener">📄 View Certificate</a>
           </div>
           <div class="cert-full-meta">
             <span class="cert-full-date">May 2025</span>
@@ -233,12 +226,10 @@
           <div class="cert-full-icon">🛡️</div>
           <div class="cert-full-body">
             <h3 class="cert-full-name">Cybersecurity Defense Analyst Pathway</h3>
-            <p class="cert-full-issuer">Cisco Networking Academy</p>
+            <p class="cert-full-issuer">Cisco Networking Academy · ICT Authority Kenya</p>
             <p class="cert-full-desc">Covers threat monitoring, SOC operations, log analysis, incident triage, and defensive security strategies.</p>
-            <div class="cert-full-tags">
-              <span>Threat Detection</span><span>Incident Response</span><span>SOC Operations</span><span>Log Analysis</span>
-            </div>
-            <button class="cert-view-btn" onclick="openCertModal('Cybersecurity Defense Analyst Pathway', 'Cisco Networking Academy')">📄 View Certificate</button>
+            <div class="cert-full-tags"><span>Threat Detection</span><span>Incident Response</span><span>SOC Operations</span><span>Log Analysis</span></div>
+            <a class="cert-view-btn" href="cert-cybersecurity-defense.pdf" target="_blank" rel="noopener">📄 View Certificate</a>
           </div>
           <div class="cert-full-meta">
             <span class="cert-full-date">June 2026</span>
@@ -250,12 +241,10 @@
           <div class="cert-full-icon">🔒</div>
           <div class="cert-full-body">
             <h3 class="cert-full-name">Cybersecurity and Emerging Technologies Awareness</h3>
-            <p class="cert-full-issuer">ICT Authority Kenya</p>
+            <p class="cert-full-issuer">ICT Authority Kenya · Salaam Technologies</p>
             <p class="cert-full-desc">Government-accredited programme covering cybersecurity best practices, emerging technology risks, and digital safety.</p>
-            <div class="cert-full-tags">
-              <span>Cybersecurity Awareness</span><span>Emerging Technologies</span><span>Digital Safety</span>
-            </div>
-            <button class="cert-view-btn" onclick="openCertModal('Cybersecurity and Emerging Technologies Awareness', 'ICT Authority Kenya')">📄 View Certificate</button>
+            <div class="cert-full-tags"><span>Cybersecurity Awareness</span><span>Emerging Technologies</span><span>Digital Safety</span></div>
+            <a class="cert-view-btn" href="cert-cybersecurity-awareness.pdf" target="_blank" rel="noopener">📄 View Certificate</a>
           </div>
           <div class="cert-full-meta">
             <span class="cert-full-date">June 2026</span>
@@ -267,12 +256,25 @@
           <div class="cert-full-icon">🤖</div>
           <div class="cert-full-body">
             <h3 class="cert-full-name">Artificial Intelligence Training</h3>
-            <p class="cert-full-issuer">ICT Authority Kenya</p>
+            <p class="cert-full-issuer">ICT Authority Kenya · Pathways Technologies</p>
             <p class="cert-full-desc">Accredited training covering AI fundamentals, machine learning concepts, and practical AI applications in the digital economy.</p>
-            <div class="cert-full-tags">
-              <span>Artificial Intelligence</span><span>Machine Learning</span><span>AI Applications</span>
-            </div>
-            <button class="cert-view-btn" onclick="openCertModal('Artificial Intelligence Training', 'ICT Authority Kenya')">📄 View Certificate</button>
+            <div class="cert-full-tags"><span>Artificial Intelligence</span><span>Machine Learning</span><span>AI Applications</span></div>
+            <a class="cert-view-btn" href="cert-ai-training.pdf" target="_blank" rel="noopener">📄 View Certificate</a>
+          </div>
+          <div class="cert-full-meta">
+            <span class="cert-full-date">April 2026</span>
+            <span class="cert-full-badge">Active</span>
+          </div>
+        </div>
+
+        <div class="cert-full-card">
+          <div class="cert-full-icon">✨</div>
+          <div class="cert-full-body">
+            <h3 class="cert-full-name">Apply AI: Update Your Resume</h3>
+            <p class="cert-full-issuer">Cisco Networking Academy · ICT Authority Kenya</p>
+            <p class="cert-full-desc">Covers applying AI tools to improve professional documents, personal branding, and career positioning in the digital job market.</p>
+            <div class="cert-full-tags"><span>AI Tools</span><span>Career Development</span><span>Professional Branding</span></div>
+            <a class="cert-view-btn" href="cert-apply-ai.pdf" target="_blank" rel="noopener">📄 View Certificate</a>
           </div>
           <div class="cert-full-meta">
             <span class="cert-full-date">April 2026</span>
@@ -286,19 +288,6 @@
         <button class="btn-back" onclick="showPage('achievements')">&#8592; Back to Achievements</button>
         <button class="btn-back" onclick="showPage('analyzer')">Next: Analyzer &#8594;</button>
       </div>
-    </div>
-  </div>
-
-  <!-- CERT MODAL -->
-  <div class="cert-modal-overlay" id="certModal" onclick="handleCertOverlay(event)">
-    <div class="cert-modal-box">
-      <h3 id="certModalTitle"></h3>
-      <p id="certModalIssuer"></p>
-      <div class="cert-modal-placeholder">
-        <div class="cert-modal-icon">📄</div>
-        <p>Certificate document not yet uploaded. Check back soon.</p>
-      </div>
-      <button class="btn-back" onclick="closeCertModal()">Close</button>
     </div>
   </div>
 
@@ -330,7 +319,7 @@
     </div>
   </div>
 
-  <!-- CONTACT PAGE -->
+  <!-- CONTACT PAGE — original thank you layout, no form -->
   <div class="page" id="page-contact">
     <div class="container page-inner">
       <div class="page-header">
@@ -351,18 +340,10 @@
           </div>
           <a href="Cyprian_Paul_CV.pdf" download class="btn-cv" style="margin-top:24px;display:inline-flex;">⬇ Download CV</a>
         </div>
-
-        <!-- CONTACT FORM -->
-        <div class="contact-form-box">
-          <h3 class="form-heading">Send a Message</h3>
-          <div class="contact-form">
-            <input id="formName"    type="text"  class="form-input" placeholder="Your Name" />
-            <input id="formEmail"   type="email" class="form-input" placeholder="Your Email" />
-            <input id="formSubject" type="text"  class="form-input" placeholder="Subject" />
-            <textarea id="formMessage" class="form-input form-textarea" placeholder="Your message..."></textarea>
-            <button class="btn-primary full-w" onclick="sendMessage()">Send Message</button>
-            <p class="form-feedback" id="formFeedback"></p>
-          </div>
+        <div class="thankyou-box">
+          <div class="thankyou-icon">🙏</div>
+          <h3 class="thankyou-title">Thank You for Visiting</h3>
+          <p class="thankyou-text">I appreciate you taking the time to go through my portfolio. I am actively looking for opportunities in ICT support, networking, and web development. If my skills match what you are looking for, I would love to hear from you. Reach out through any of the contacts on the left and I will get back to you within 24 hours.</p>
         </div>
       </div>
       <div class="back-bar">
@@ -382,7 +363,6 @@
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
