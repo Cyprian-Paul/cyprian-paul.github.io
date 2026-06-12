@@ -146,8 +146,8 @@ function renderProjects() {
       ${p.demo ? `
         <div class="project-demo">
           <span class="demo-label">Demo Access</span>
-          <div class="demo-row"><span class="demo-key">${p.demo.label}</span><code class="demo-val">${p.demo.username}</code></div>
-          <div class="demo-row"><span class="demo-key">Password</span><code class="demo-val">${p.demo.password}</code></div>
+          <div class="demo-row"><span class="demo-key">${p.demo.label}:</span><code class="demo-val">${p.demo.username}</code></div>
+          <div class="demo-row"><span class="demo-key">Password:</span><code class="demo-val">${p.demo.password}</code></div>
         </div>
       ` : ""}
       ${p.link ? `<a href="${p.link}" target="_blank" rel="noopener" class="project-link">View Live Project →</a>` : ""}
