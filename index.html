@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cyprian Paul Mang'ong'o | ICT Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
 </head>
 <body>
 
@@ -33,7 +33,7 @@
   </nav>
 
   <!-- HOME PAGE -->
-  <div class="page active" id="page-home">
+  <div class="page active" id="page-home" data-page="home">
     <div class="container home-inner">
       <div class="home-text">
         <p class="home-eyebrow">Welcome to my portfolio</p>
@@ -84,14 +84,10 @@
         <div class="floating-badge badge-bottom">Kenya 🇰🇪</div>
       </div>
     </div>
-    <div class="home-next container">
-      <span></span>
-      <button class="btn-back" onclick="showPage('about')">Next: About Me &#8594;</button>
-    </div>
   </div>
 
   <!-- ABOUT PAGE -->
-  <div class="page" id="page-about">
+  <div class="page" id="page-about" data-page="about">
     <div class="container page-inner">
       <div class="page-header reveal">
         <p class="sec-eye">Who I Am</p>
@@ -99,22 +95,15 @@
       </div>
       <div class="about-grid">
         <div class="about-left">
-          <p class="about-intro">
-            I am Cyprian Paul Mang'ong'o, a 25-year-old ICT professional based in Kenya, holding a Bachelor of Science in Information Technology from Zetech University. I specialise in ICT technical support, network administration, and web development.
-          </p>
-          <p class="about-intro">
-            I have hands-on experience setting up and maintaining LAN infrastructure, installing and configuring CCTV systems, troubleshooting hardware and software issues, and providing end-user support. I am also a certified CCNA holder and have completed AI and Cybersecurity training through the ICT Authority of Kenya.
-          </p>
-          <p class="about-intro">
-            I bring a practical, problem-solving approach to every role I take on. Whether it is running cable across a building, setting up a database, or building a website from scratch, I focus on delivering work that functions reliably and meets the needs of the people using it.
-          </p>
-
+          <p class="about-intro">I am Cyprian Paul Mang'ong'o, a 25 year old ICT professional based in Kenya, holding a Bachelor of Science in Information Technology from Zetech University. I specialise in ICT technical support, network administration, and web development.</p>
+          <p class="about-intro">I have hands on experience setting up and maintaining LAN infrastructure, installing and configuring CCTV systems, troubleshooting hardware and software issues, and providing end user support. I am also a certified CCNA holder and have completed AI and Cybersecurity training through the ICT Authority of Kenya.</p>
+          <p class="about-intro">I bring a practical, problem solving approach to every role I take on. Whether it is running cable across a building, setting up a database, or building a website from scratch, I focus on delivering work that functions reliably and meets the needs of the people using it.</p>
           <div class="about-details">
             <div class="detail-row"><span class="detail-label">Full Name</span><span class="detail-val">Cyprian Paul Mang'ong'o</span></div>
             <div class="detail-row"><span class="detail-label">Age</span><span class="detail-val">25 Years</span></div>
             <div class="detail-row"><span class="detail-label">Gender</span><span class="detail-val">Male</span></div>
             <div class="detail-row"><span class="detail-label">Location</span><span class="detail-val">Ruiru, Kenya</span></div>
-            <div class="detail-row"><span class="detail-label">Degree</span><span class="detail-val">BSc IT — Second Class Honours</span></div>
+            <div class="detail-row"><span class="detail-label">Degree</span><span class="detail-val">BSc IT, Second Class Honours</span></div>
             <div class="detail-row"><span class="detail-label">University</span><span class="detail-val">Zetech University</span></div>
             <div class="detail-row"><span class="detail-label">High School</span><span class="detail-val">Friends School Senende</span></div>
             <div class="detail-row"><span class="detail-label">KCSE</span><span class="detail-val">2017 – 2021</span></div>
@@ -123,14 +112,12 @@
             <div class="detail-row"><span class="detail-label">Projects</span><span class="detail-val">5+ Completed</span></div>
             <div class="detail-row"><span class="detail-label">Status</span><span class="detail-val status-open">Open to Work</span></div>
           </div>
-
           <div class="about-mini-stats">
             <div class="mini-stat"><span class="mini-num">2+</span><span class="mini-label">Years Experience</span></div>
             <div class="mini-stat"><span class="mini-num">5+</span><span class="mini-label">Projects</span></div>
             <div class="mini-stat"><span class="mini-num">5</span><span class="mini-label">Certifications</span></div>
           </div>
         </div>
-
         <div class="about-right">
           <div class="picture-slot">
             <img src="photo.jpeg" alt="Cyprian Paul Mang'ong'o" class="profile-photo" />
@@ -140,15 +127,11 @@
           <a href="Cyprian_Paul_CV.pdf" download class="btn-cv">⬇ Download CV</a>
         </div>
       </div>
-      <div class="back-bar">
-        <button class="btn-back" onclick="showPage('home')">&#8592; Back to Home</button>
-        <button class="btn-back" onclick="showPage('skills')">Next: Skills &#8594;</button>
-      </div>
     </div>
   </div>
 
-  <!-- SKILLS PAGE — no certifications here -->
-  <div class="page" id="page-skills">
+  <!-- SKILLS PAGE -->
+  <div class="page" id="page-skills" data-page="skills">
     <div class="container page-inner">
       <div class="page-header reveal">
         <p class="sec-eye">What I Bring</p>
@@ -156,15 +139,11 @@
         <p class="sec-desc">Technical competencies built through education, certification, and hands-on project work.</p>
       </div>
       <div class="skills-grid reveal-stagger" id="skillsGrid"></div>
-      <div class="back-bar">
-        <button class="btn-back" onclick="showPage('home')">&#8592; Back to Home</button>
-        <button class="btn-back" onclick="showPage('projects')">Next: Projects &#8594;</button>
-      </div>
     </div>
   </div>
 
   <!-- PROJECTS PAGE -->
-  <div class="page" id="page-projects">
+  <div class="page" id="page-projects" data-page="projects">
     <div class="container page-inner">
       <div class="page-header reveal">
         <p class="sec-eye">Work Samples</p>
@@ -172,15 +151,11 @@
         <p class="sec-desc">Real projects built and deployed across networking, ICT support, and web development.</p>
       </div>
       <div class="projects-grid reveal-stagger" id="projectsGrid"></div>
-      <div class="back-bar">
-        <button class="btn-back" onclick="showPage('home')">&#8592; Back to Home</button>
-        <button class="btn-back" onclick="showPage('achievements')">Next: Achievements &#8594;</button>
-      </div>
     </div>
   </div>
 
   <!-- ACHIEVEMENTS PAGE -->
-  <div class="page" id="page-achievements">
+  <div class="page" id="page-achievements" data-page="achievements">
     <div class="container page-inner">
       <div class="page-header reveal">
         <p class="sec-eye">Track Record</p>
@@ -188,26 +163,23 @@
         <p class="sec-desc">Key milestones and results from my professional and academic journey.</p>
       </div>
       <div class="achievements-list" id="achievementsList"></div>
-      <div class="back-bar">
-        <button class="btn-back" onclick="showPage('home')">&#8592; Back to Home</button>
-        <button class="btn-back" onclick="showPage('certifications')">Next: Certifications &#8594;</button>
-      </div>
     </div>
   </div>
 
   <!-- CERTIFICATIONS PAGE -->
-  <div class="page" id="page-certifications">
+  <div class="page" id="page-certifications" data-page="certifications">
     <div class="container page-inner">
       <div class="page-header reveal">
         <p class="sec-eye">Credentials</p>
         <h2 class="sec-title">Certifications</h2>
         <p class="sec-desc">Formal credentials completed across networking, cybersecurity, and emerging technology.</p>
       </div>
-
       <div class="cert-full-grid reveal-stagger">
 
         <div class="cert-full-card">
-          <div class="cert-full-icon">🌐</div>
+          <div class="cert-full-icon cert-logo-wrap">
+            <img src="https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/associate/ccna/_jcr_content/Grid/category_atl/layout-category-atl/anchor_info_ca0e/image.img.jpg/1581434275770.jpg" alt="Cisco" class="cert-logo" onerror="this.parentElement.innerHTML='🌐'" />
+          </div>
           <div class="cert-full-body">
             <h3 class="cert-full-name">CCNA: Switching, Routing & Wireless Essentials</h3>
             <p class="cert-full-issuer">Cisco Networking Academy · Zetech University</p>
@@ -222,7 +194,9 @@
         </div>
 
         <div class="cert-full-card">
-          <div class="cert-full-icon">🛡️</div>
+          <div class="cert-full-icon cert-logo-wrap">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/200px-Cisco_logo_blue_2016.svg.png" alt="Cisco" class="cert-logo" onerror="this.parentElement.innerHTML='🛡️'" />
+          </div>
           <div class="cert-full-body">
             <h3 class="cert-full-name">Cybersecurity Defense Analyst Pathway</h3>
             <p class="cert-full-issuer">Cisco Networking Academy · ICT Authority Kenya</p>
@@ -237,7 +211,9 @@
         </div>
 
         <div class="cert-full-card">
-          <div class="cert-full-icon">🔒</div>
+          <div class="cert-full-icon cert-logo-wrap">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/ICT_Authority_Kenya_Logo.png/200px-ICT_Authority_Kenya_Logo.png" alt="ICT Authority" class="cert-logo" onerror="this.parentElement.innerHTML='🔒'" />
+          </div>
           <div class="cert-full-body">
             <h3 class="cert-full-name">Cybersecurity and Emerging Technologies Awareness</h3>
             <p class="cert-full-issuer">ICT Authority Kenya · Salaam Technologies</p>
@@ -252,7 +228,9 @@
         </div>
 
         <div class="cert-full-card">
-          <div class="cert-full-icon">🤖</div>
+          <div class="cert-full-icon cert-logo-wrap">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/ICT_Authority_Kenya_Logo.png/200px-ICT_Authority_Kenya_Logo.png" alt="ICT Authority" class="cert-logo" onerror="this.parentElement.innerHTML='🤖'" />
+          </div>
           <div class="cert-full-body">
             <h3 class="cert-full-name">Artificial Intelligence Training</h3>
             <p class="cert-full-issuer">ICT Authority Kenya · Pathways Technologies</p>
@@ -267,7 +245,9 @@
         </div>
 
         <div class="cert-full-card">
-          <div class="cert-full-icon">✨</div>
+          <div class="cert-full-icon cert-logo-wrap">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/200px-Cisco_logo_blue_2016.svg.png" alt="Cisco" class="cert-logo" onerror="this.parentElement.innerHTML='✨'" />
+          </div>
           <div class="cert-full-body">
             <h3 class="cert-full-name">Apply AI: Update Your Resume</h3>
             <p class="cert-full-issuer">Cisco Networking Academy · ICT Authority Kenya</p>
@@ -282,16 +262,11 @@
         </div>
 
       </div>
-
-      <div class="back-bar">
-        <button class="btn-back" onclick="showPage('achievements')">&#8592; Back to Achievements</button>
-        <button class="btn-back" onclick="showPage('analyzer')">Next: Analyzer &#8594;</button>
-      </div>
     </div>
   </div>
 
   <!-- ANALYZER PAGE -->
-  <div class="page" id="page-analyzer">
+  <div class="page" id="page-analyzer" data-page="analyzer">
     <div class="container page-inner">
       <div class="page-header reveal">
         <p class="sec-eye">Smart Tool</p>
@@ -311,15 +286,11 @@
           <div class="result-cards" id="resultCards"></div>
         </div>
       </div>
-      <div class="back-bar">
-        <button class="btn-back" onclick="showPage('home')">&#8592; Back to Home</button>
-        <button class="btn-back" onclick="showPage('contact')">Next: Hire Me &#8594;</button>
-      </div>
     </div>
   </div>
 
-  <!-- CONTACT PAGE — original thank you layout, no form -->
-  <div class="page" id="page-contact">
+  <!-- CONTACT PAGE -->
+  <div class="page" id="page-contact" data-page="contact">
     <div class="container page-inner">
       <div class="page-header reveal">
         <p class="sec-eye">Let's Connect</p>
@@ -345,9 +316,6 @@
           <p class="thankyou-text">I appreciate you taking the time to go through my portfolio. I am actively looking for opportunities in ICT support, networking, and web development. If my skills match what you are looking for, I would love to hear from you. Reach out through any of the contacts on the left and I will get back to you within 24 hours.</p>
         </div>
       </div>
-      <div class="back-bar">
-        <button class="btn-back" onclick="showPage('home')">&#8592; Back to Home</button>
-      </div>
     </div>
   </div>
 
@@ -361,6 +329,15 @@
       </div>
     </div>
   </footer>
+
+  <!-- FLOATING NAV BAR — arrow circles only, no text -->
+  <div class="float-nav" id="floatNav">
+    <button class="float-btn float-btn-back" id="floatBack" onclick="floatNavBack()">&#8592;</button>
+    <div class="float-divider"></div>
+    <span class="float-page-label" id="floatLabel">Home</span>
+    <div class="float-divider"></div>
+    <button class="float-btn float-btn-next" id="floatNext" onclick="floatNavNext()">&#8594;</button>
+  </div>
 
   <script src="script.js"></script>
 </body>
