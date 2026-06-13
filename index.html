@@ -9,6 +9,9 @@
 </head>
 <body>
 
+  <div id="scrollProgress"></div>
+  <canvas id="particleCanvas"></canvas>
+  <button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8679;</button>
   <div class="overlay"></div>
 
   <!-- NAV -->
@@ -39,12 +42,8 @@
           <span class="accent">Cyprian Paul</span><br />
           Mang'ong'o
         </h1>
-        <p class="home-profession">
-          <span class="profession-tag">ICT Support Specialist</span>
-          <span class="profession-dot">·</span>
-          <span class="profession-tag">Web Developer</span>
-          <span class="profession-dot">·</span>
-          <span class="profession-tag">Network Technician</span>
+        <p class="home-profession home-profession-typed">
+          <span class="typed-text" id="typedRole"></span><span class="typing-cursor"></span>
         </p>
         <p class="home-welcome">
           Welcome! I am a certified ICT professional based in Kenya. I set up networks, build websites, troubleshoot hardware and software, and support users across real working environments. Explore my work, skills, and projects below.
@@ -94,7 +93,7 @@
   <!-- ABOUT PAGE -->
   <div class="page" id="page-about">
     <div class="container page-inner">
-      <div class="page-header">
+      <div class="page-header reveal">
         <p class="sec-eye">Who I Am</p>
         <h2 class="sec-title">About Me</h2>
       </div>
@@ -151,12 +150,12 @@
   <!-- SKILLS PAGE — no certifications here -->
   <div class="page" id="page-skills">
     <div class="container page-inner">
-      <div class="page-header">
+      <div class="page-header reveal">
         <p class="sec-eye">What I Bring</p>
         <h2 class="sec-title">Skills</h2>
         <p class="sec-desc">Technical competencies built through education, certification, and hands-on project work.</p>
       </div>
-      <div class="skills-grid" id="skillsGrid"></div>
+      <div class="skills-grid reveal-stagger" id="skillsGrid"></div>
       <div class="back-bar">
         <button class="btn-back" onclick="showPage('home')">&#8592; Back to Home</button>
         <button class="btn-back" onclick="showPage('projects')">Next: Projects &#8594;</button>
@@ -167,12 +166,12 @@
   <!-- PROJECTS PAGE -->
   <div class="page" id="page-projects">
     <div class="container page-inner">
-      <div class="page-header">
+      <div class="page-header reveal">
         <p class="sec-eye">Work Samples</p>
         <h2 class="sec-title">Featured Projects</h2>
         <p class="sec-desc">Real projects built and deployed across networking, ICT support, and web development.</p>
       </div>
-      <div class="projects-grid" id="projectsGrid"></div>
+      <div class="projects-grid reveal-stagger" id="projectsGrid"></div>
       <div class="back-bar">
         <button class="btn-back" onclick="showPage('home')">&#8592; Back to Home</button>
         <button class="btn-back" onclick="showPage('achievements')">Next: Achievements &#8594;</button>
@@ -183,7 +182,7 @@
   <!-- ACHIEVEMENTS PAGE -->
   <div class="page" id="page-achievements">
     <div class="container page-inner">
-      <div class="page-header">
+      <div class="page-header reveal">
         <p class="sec-eye">Track Record</p>
         <h2 class="sec-title">Achievements</h2>
         <p class="sec-desc">Key milestones and results from my professional and academic journey.</p>
@@ -199,13 +198,13 @@
   <!-- CERTIFICATIONS PAGE -->
   <div class="page" id="page-certifications">
     <div class="container page-inner">
-      <div class="page-header">
+      <div class="page-header reveal">
         <p class="sec-eye">Credentials</p>
         <h2 class="sec-title">Certifications</h2>
         <p class="sec-desc">Formal credentials completed across networking, cybersecurity, and emerging technology.</p>
       </div>
 
-      <div class="cert-full-grid">
+      <div class="cert-full-grid reveal-stagger">
 
         <div class="cert-full-card">
           <div class="cert-full-icon">🌐</div>
@@ -214,7 +213,7 @@
             <p class="cert-full-issuer">Cisco Networking Academy · Zetech University</p>
             <p class="cert-full-desc">Covers VLANs, inter-VLAN routing, STP, EtherChannel, OSPF, DHCPv4/v6, and wireless LAN for enterprise networks.</p>
             <div class="cert-full-tags"><span>Routing & Switching</span><span>VLANs</span><span>OSPF</span><span>Wireless LAN</span></div>
-            <a class="cert-view-btn" href="cert-ccna.pdf" target="_blank" rel="noopener">📄 View Certificate</a>
+            <a class="cert-view-btn" href="cert-ccna.pdf.pdf" target="_blank" rel="noopener">📄 View Certificate</a>
           </div>
           <div class="cert-full-meta">
             <span class="cert-full-date">May 2025</span>
@@ -229,7 +228,7 @@
             <p class="cert-full-issuer">Cisco Networking Academy · ICT Authority Kenya</p>
             <p class="cert-full-desc">Covers threat monitoring, SOC operations, log analysis, incident triage, and defensive security strategies.</p>
             <div class="cert-full-tags"><span>Threat Detection</span><span>Incident Response</span><span>SOC Operations</span><span>Log Analysis</span></div>
-            <a class="cert-view-btn" href="cert-cybersecurity-defense.pdf" target="_blank" rel="noopener">📄 View Certificate</a>
+            <a class="cert-view-btn" href="cert-cybersecurity-defense.pdf.pdf" target="_blank" rel="noopener">📄 View Certificate</a>
           </div>
           <div class="cert-full-meta">
             <span class="cert-full-date">June 2026</span>
@@ -244,7 +243,7 @@
             <p class="cert-full-issuer">ICT Authority Kenya · Salaam Technologies</p>
             <p class="cert-full-desc">Government-accredited programme covering cybersecurity best practices, emerging technology risks, and digital safety.</p>
             <div class="cert-full-tags"><span>Cybersecurity Awareness</span><span>Emerging Technologies</span><span>Digital Safety</span></div>
-            <a class="cert-view-btn" href="cert-cybersecurity-awareness.pdf" target="_blank" rel="noopener">📄 View Certificate</a>
+            <a class="cert-view-btn" href="cert-cybersecurity-awareness.pdf.pdf" target="_blank" rel="noopener">📄 View Certificate</a>
           </div>
           <div class="cert-full-meta">
             <span class="cert-full-date">June 2026</span>
@@ -259,7 +258,7 @@
             <p class="cert-full-issuer">ICT Authority Kenya · Pathways Technologies</p>
             <p class="cert-full-desc">Accredited training covering AI fundamentals, machine learning concepts, and practical AI applications in the digital economy.</p>
             <div class="cert-full-tags"><span>Artificial Intelligence</span><span>Machine Learning</span><span>AI Applications</span></div>
-            <a class="cert-view-btn" href="cert-ai-training.pdf" target="_blank" rel="noopener">📄 View Certificate</a>
+            <a class="cert-view-btn" href="cert-ai-training.pdf.pdf" target="_blank" rel="noopener">📄 View Certificate</a>
           </div>
           <div class="cert-full-meta">
             <span class="cert-full-date">April 2026</span>
@@ -274,7 +273,7 @@
             <p class="cert-full-issuer">Cisco Networking Academy · ICT Authority Kenya</p>
             <p class="cert-full-desc">Covers applying AI tools to improve professional documents, personal branding, and career positioning in the digital job market.</p>
             <div class="cert-full-tags"><span>AI Tools</span><span>Career Development</span><span>Professional Branding</span></div>
-            <a class="cert-view-btn" href="cert-apply-ai.pdf" target="_blank" rel="noopener">📄 View Certificate</a>
+            <a class="cert-view-btn" href="Apply_AI_Update_Your_Resume_certificate.pdf" target="_blank" rel="noopener">📄 View Certificate</a>
           </div>
           <div class="cert-full-meta">
             <span class="cert-full-date">April 2026</span>
@@ -294,7 +293,7 @@
   <!-- ANALYZER PAGE -->
   <div class="page" id="page-analyzer">
     <div class="container page-inner">
-      <div class="page-header">
+      <div class="page-header reveal">
         <p class="sec-eye">Smart Tool</p>
         <h2 class="sec-title">Portfolio Analyzer</h2>
         <p class="sec-desc">Paste any company URL. The tool generates a tailored message showing how my skills match what that organisation needs.</p>
@@ -322,7 +321,7 @@
   <!-- CONTACT PAGE — original thank you layout, no form -->
   <div class="page" id="page-contact">
     <div class="container page-inner">
-      <div class="page-header">
+      <div class="page-header reveal">
         <p class="sec-eye">Let's Connect</p>
         <h2 class="sec-title">Work with Me</h2>
         <p class="sec-desc">Available for full-time roles, contract work, and project-based engagements in ICT support, networking, and web development.</p>
