@@ -18,7 +18,8 @@ const projects = [
     desc: "A live helpdesk system with ticket submission, SLA tracking, priority filtering, and CSV export. Built with React, FastAPI, and MySQL with JWT authentication and role-based access.",
     outcome: "Fully deployed and live.",
     link: "https://cyprian-paul.github.io/ResolveIQ",
-    demo: { label: "Email", username: "admin@company.com", password: "admin123" }
+    demo: { label: "Email", username: "admin@company.com", password: "admin123" },
+    extraLink: null
   },
   {
     tag: "Networking · Monitoring",
@@ -26,7 +27,8 @@ const projects = [
     desc: "A real-time dashboard tracking device status, uptime, active alerts, and network events. Built for ICT teams needing live infrastructure visibility.",
     outcome: "Fully deployed and live.",
     link: "https://cyprian-paul.github.io/NodeScan",
-    demo: { label: "Username", username: "admin", password: "admin123" }
+    demo: { label: "Username", username: "admin", password: "admin123" },
+    extraLink: null
   },
   {
     tag: "ICT · Infrastructure",
@@ -34,7 +36,17 @@ const projects = [
     desc: "An infrastructure management platform for tracking and managing ICT assets, network devices, and system statuses across an organisation.",
     outcome: "Fully deployed and live.",
     link: "https://cyprian-paul.github.io/NetPulse-ICT",
-    demo: { label: "Username", username: "admin", password: "admin123" }
+    demo: { label: "Username", username: "admin", password: "admin123" },
+    extraLink: null
+  },
+  {
+    tag: "Security · Pentest Tool",
+    title: "RedReport — Penetration Testing Report Generator",
+    desc: "A full-stack platform for cybersecurity professionals to document vulnerabilities, generate professional pentest reports with CVSS scoring, and export as PDF or DOCX. Includes public share links and GitHub README generation.",
+    outcome: "Fully deployed and live with demo account.",
+    link: "https://cyprian-paul.github.io/redreport-demo/",
+    demo: { label: "Email", username: "demo@redreport.dev", password: "Demo1234!" },
+    extraLink: { label: "Open Full App", url: "https://redreport.vercel.app" }
   },
   {
     tag: "Networking · Infrastructure",
@@ -42,7 +54,8 @@ const projects = [
     desc: "Planned, installed, and tested a structured LAN cabling system across a building at Zetech University. Configured switches, IP addressing, and verified connectivity across all nodes.",
     outcome: "Fully functional LAN with documented network diagram and tested connectivity on all ports.",
     link: null,
-    demo: null
+    demo: null,
+    extraLink: null
   },
   {
     tag: "Security · Networking",
@@ -50,7 +63,8 @@ const projects = [
     desc: "Installed and configured a CCTV surveillance system integrated into the existing campus network. Set up camera positioning, DVR configuration, and remote monitoring access.",
     outcome: "Live monitoring system covering key areas with remote access configured for security personnel.",
     link: null,
-    demo: null
+    demo: null,
+    extraLink: null
   },
 ];
 
@@ -62,7 +76,7 @@ const achievements = [
   { title: "Completed AI Training — ICT Authority of Kenya", desc: "Completed a government-backed AI training programme covering machine learning fundamentals, AI tools, and practical applications in the Kenyan digital economy." },
   { title: "Completed Cybersecurity & Emerging Technologies Awareness — ICT Authority Kenya", desc: "Government-accredited programme covering cybersecurity best practices, emerging technology risks, and digital safety in Kenya's ICT landscape." },
   { title: "Completed Apply AI: Update Your Resume — Cisco Networking Academy", desc: "Completed training on applying AI tools for career development, professional branding, and document optimisation in the digital job market." },
-  { title: "Built and deployed 3 live web applications", desc: "ResolveIQ, NodeScan, and NetPulse are all publicly accessible, demonstrating full-stack development, networking, and IT support system skills." },
+  { title: "Built and deployed 4 live web applications", desc: "ResolveIQ, NodeScan, NetPulse, and RedReport are all publicly accessible, demonstrating full-stack development, networking, security tooling, and IT support system skills." },
   { title: "Graduated with BSc Information Technology — Second Class Honours", desc: "Completed a four-year degree at Zetech University covering networking, web development, databases, cybersecurity, software engineering, and ICT project management." },
 ];
 
@@ -75,60 +89,31 @@ function updateFloatNav(name) {
   const idx = pages.indexOf(name);
   if (idx === -1) return;
   currentPageIndex = idx;
-
   const label = document.getElementById('floatLabel');
   const backBtn = document.getElementById('floatBack');
   const nextBtn = document.getElementById('floatNext');
-
   if (label) label.textContent = pageLabels[name] || name;
-
-  if (backBtn) {
-    backBtn.style.opacity = idx === 0 ? '0.3' : '1';
-    backBtn.style.pointerEvents = idx === 0 ? 'none' : 'auto';
-  }
-
-  if (nextBtn) {
-    nextBtn.style.opacity = idx === pages.length - 1 ? '0.3' : '1';
-    nextBtn.style.pointerEvents = idx === pages.length - 1 ? 'none' : 'auto';
-  }
+  if (backBtn) { backBtn.style.opacity = idx === 0 ? '0.3' : '1'; backBtn.style.pointerEvents = idx === 0 ? 'none' : 'auto'; }
+  if (nextBtn) { nextBtn.style.opacity = idx === pages.length - 1 ? '0.3' : '1'; nextBtn.style.pointerEvents = idx === pages.length - 1 ? 'none' : 'auto'; }
 }
 
-function floatNavBack() {
-  if (currentPageIndex > 0) showPage(pages[currentPageIndex - 1]);
-}
-
-function floatNavNext() {
-  if (currentPageIndex < pages.length - 1) showPage(pages[currentPageIndex + 1]);
-}
+function floatNavBack() { if (currentPageIndex > 0) showPage(pages[currentPageIndex - 1]); }
+function floatNavNext() { if (currentPageIndex < pages.length - 1) showPage(pages[currentPageIndex + 1]); }
 
 /* ===== PAGE NAVIGATION ===== */
 function showPage(name) {
   const current = document.querySelector(".page.active");
   const target = document.getElementById("page-" + name);
   if (!target || current === target) return;
-
-  if (current) {
-    current.classList.add("exit");
-    setTimeout(() => { current.classList.remove("active", "exit"); }, 300);
-  }
-
-  setTimeout(() => {
-    target.classList.add("active");
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, 150);
-
+  if (current) { current.classList.add("exit"); setTimeout(() => { current.classList.remove("active", "exit"); }, 300); }
+  setTimeout(() => { target.classList.add("active"); window.scrollTo({ top: 0, behavior: "smooth" }); }, 150);
   document.querySelectorAll(".nav-links a").forEach(a => a.classList.remove("nav-active"));
   const activeLink = document.querySelector(`.nav-links a[data-page="${name}"]`);
   if (activeLink) activeLink.classList.add("nav-active");
-
   if (name === "skills") {
-    setTimeout(() => {
-      document.querySelectorAll(".skill-bar-fill").forEach(bar => { bar.style.width = bar.dataset.level + "%"; });
-    }, 300);
+    setTimeout(() => { document.querySelectorAll(".skill-bar-fill").forEach(bar => { bar.style.width = bar.dataset.level + "%"; }); }, 300);
   }
-
   updateFloatNav(name);
-
   const links = document.querySelector(".nav-links");
   if (links && links.style.display === "flex" && window.innerWidth < 640) links.style.display = "";
 }
@@ -161,7 +146,10 @@ function renderProjects() {
         <div class="demo-row"><span class="demo-key">${p.demo.label}:</span><code class="demo-val">${p.demo.username}</code></div>
         <div class="demo-row"><span class="demo-key">Password:</span><code class="demo-val">${p.demo.password}</code></div>
       </div>` : ""}
-      ${p.link ? `<a href="${p.link}" target="_blank" rel="noopener" class="project-link">View Live Project →</a>` : ""}
+      <div class="project-actions">
+        ${p.link ? `<a href="${p.link}" target="_blank" rel="noopener" class="project-link">View Demo →</a>` : ""}
+        ${p.extraLink ? `<a href="${p.extraLink.url}" target="_blank" rel="noopener" class="project-link-real">${p.extraLink.label} →</a>` : ""}
+      </div>
     </div>`).join("");
 }
 
@@ -198,36 +186,127 @@ function animateCounters() {
 const analyzerMap = {
   network: { label: "Networking Fit", text: "I hold a CCNA certification and have hands-on experience with LAN setup, IP configuration, and structured cabling from real projects at Zetech University." },
   ict:     { label: "ICT Support Fit", text: "ICT technical support is my core specialty. I have provided hardware troubleshooting, OS installation, user training, and end-user support in real environments." },
-  tech:    { label: "Tech Environment Fit", text: "I am comfortable in fast-moving tech environments. I adapt quickly to new tools, systems, and workflows and have experience with both hardware and software sides of ICT." },
-  security:{ label: "Cybersecurity Fit", text: "I have completed two cybersecurity certifications covering threat identification, network security, SOC operations, and secure system configuration." },
-  web:     { label: "Web Development Fit", text: "I build websites using HTML, CSS, JavaScript, and React. I have deployed three live applications on GitHub Pages." },
-  host:    { label: "Hosting & CMS Fit", text: "I have experience with GitHub Pages, cPanel, and static site deployment. I understand domain setup, file management, and web hosting workflows." },
+  tech:    { label: "Tech Environment Fit", text: "I am comfortable in fast-moving tech environments. I adapt quickly to new tools, systems, and workflows." },
+  security:{ label: "Cybersecurity Fit", text: "I have completed two cybersecurity certifications and built RedReport, a full-stack penetration testing report platform with CVSS scoring and professional PDF export." },
+  web:     { label: "Web Development Fit", text: "I build websites using HTML, CSS, JavaScript, and React. I have deployed four live applications including a full-stack pentest reporting tool." },
+  host:    { label: "Hosting & CMS Fit", text: "I have experience with GitHub Pages, Vercel, cPanel, and static site deployment." },
   isp:     { label: "ISP / NOC Fit", text: "My CCNA training in routing, switching, and wireless, combined with hands-on LAN infrastructure work, makes me ready for NOC and ISP support roles." },
   support: { label: "Support Role Fit", text: "End-user support is where I started. I have provided helpdesk, hardware, software, and remote support in real working environments." },
 };
 
 const defaultCards = [
-  { label: "Core Value I Bring", text: "I combine practical ICT skills with real project experience. I have cabled networks, installed CCTV systems, and built three live web applications." },
+  { label: "Core Value I Bring", text: "I combine practical ICT skills with real project experience. I have cabled networks, installed CCTV systems, and built four live web applications including a penetration testing report platform." },
   { label: "Why I Stand Out", text: "I hold a CCNA, two ICT Authority certifications, and a BSc in IT. I bring both certification depth and hands-on execution to every role." },
   { label: "What I Can Deliver", text: "From day one I can support users, troubleshoot hardware, set up network infrastructure, or contribute to web development depending on what your team needs most." },
 ];
 
-function runAnalyzer() {
-  const input = document.getElementById("urlInput").value.trim();
-  if (!input) return;
-  let domain = input;
-  try { domain = new URL(input).hostname.replace("www.", ""); } catch (_) { domain = input.replace(/^https?:\/\//, "").split("/")[0]; }
-  const lower = (input + domain).toLowerCase();
+/* ===== JOB TITLE KEYWORD MAP ===== */
+const jobMap = {
+  noc:        { label: "NOC Engineer Fit", text: "I have CCNA certification covering routing, switching, and wireless protocols. I understand network monitoring, fault detection, and incident escalation from both coursework and hands-on LAN infrastructure work at Zetech University. NodeScan, my live network monitoring dashboard, directly demonstrates this skill set." },
+  network:    { label: "Networking Fit", text: "I hold a CCNA certification and have configured LAN infrastructure, IP addressing, DHCP, DNS, and structured cabling in a real university environment. I build and understand the tools that network teams use daily." },
+  support:    { label: "IT Support Fit", text: "IT support is my core hands-on experience. At Zetech University I resolved hardware, software, and network faults across multiple departments, administered Microsoft 365, trained staff, and logged every support request using structured documentation." },
+  helpdesk:   { label: "Helpdesk Fit", text: "I built ResolveIQ, a full-stack helpdesk ticketing system with SLA tracking, priority filtering, and CSV export. Beyond building the tool, I have real helpdesk experience from my attachment at Zetech University where I handled first-level support across departments." },
+  security:   { label: "Cybersecurity Fit", text: "I hold two cybersecurity certifications from Cisco Networking Academy and ICT Authority Kenya, covering SOC operations, threat detection, and incident response. I also built RedReport, a professional penetration testing report platform with CVSS scoring, which shows I understand how security assessments are documented and communicated." },
+  cyber:      { label: "Cybersecurity Fit", text: "I hold two cybersecurity certifications from Cisco Networking Academy and ICT Authority Kenya, covering SOC operations, threat detection, and incident response. I also built RedReport, a professional penetration testing report platform with CVSS scoring, which shows I understand how security assessments are documented and communicated." },
+  web:        { label: "Web Development Fit", text: "I have built and deployed four live web applications: ResolveIQ, NodeScan, NetPulse, and RedReport. I work across the full stack using HTML, CSS, JavaScript, React, FastAPI, and MySQL. All four projects are publicly accessible and show real production-level features including JWT auth, PDF export, and live dashboards." },
+  developer:  { label: "Developer Fit", text: "I have built four deployed web applications covering helpdesk systems, network monitoring, infrastructure management, and security reporting. I work with React, FastAPI, MySQL, and deploy on GitHub Pages and Vercel. My code is on GitHub and my projects are live." },
+  isp:        { label: "ISP Role Fit", text: "My CCNA covers the routing, switching, and wireless protocols that ISP operations depend on. I understand IP addressing, VLAN configuration, DHCP, DNS, and network troubleshooting at a practical level from both certification and real infrastructure work." },
+  analyst:    { label: "Analyst Fit", text: "I combine technical skills with documentation discipline. I built RedReport specifically to turn complex security findings into structured, professional reports. I understand how to collect evidence, assess severity using CVSS scoring, and present findings clearly to both technical and non-technical audiences." },
+  technician: { label: "Field Technician Fit", text: "I have direct field experience from my attachment at Zetech University where I ran structured cabling, configured switches, installed CCTV systems, and crimped Ethernet cables across a live campus environment. I am comfortable working hands-on in physical and field settings." },
+  intern:     { label: "Internship Fit", text: "I am a recent BSc IT graduate who has already delivered real infrastructure work, built four deployed applications, and earned a CCNA certification. I bring practical skills and a track record of completing projects independently from start to finish." },
+};
+
+function getJobCards(jobTitle) {
+  const lower = jobTitle.toLowerCase();
   const matched = [];
-  Object.entries(analyzerMap).forEach(([key, val]) => { if (lower.includes(key)) matched.push(val); });
-  const cards = matched.length > 0 ? [...matched.slice(0, 2), defaultCards[0]] : defaultCards;
-  document.getElementById("resultDomain").textContent = "Matched to: " + domain;
+  Object.entries(jobMap).forEach(([key, val]) => {
+    if (lower.includes(key) && !matched.find(m => m.label === val.label)) {
+      matched.push(val);
+    }
+  });
+  return matched;
+}
+
+function buildPitch(domain, jobTitle) {
+  const job = jobTitle || "this role";
+  const company = domain || "your organisation";
+  return `I am Cyprian Paul Mang'ong'o, a BSc IT graduate based in Kenya with a CCNA certification and hands-on experience in ICT support, network infrastructure, and full-stack web development. I have built and deployed four live web applications and delivered real infrastructure work at Zetech University. I am applying for the ${job} position at ${company} because my practical background aligns directly with what your team needs. I would welcome the opportunity to contribute from day one.`;
+}
+
+function runAnalyzer() {
+  const urlInput = document.getElementById("urlInput").value.trim();
+  const jobInput = document.getElementById("jobInput") ? document.getElementById("jobInput").value.trim() : "";
+
+  if (!urlInput && !jobInput) return;
+
+  let domain = urlInput;
+  try { domain = new URL(urlInput).hostname.replace("www.", ""); } catch (_) {
+    domain = urlInput.replace(/^https?:\/\//, "").split("/")[0];
+  }
+
+  const urlLower = (urlInput + domain).toLowerCase();
+  const jobLower = jobInput.toLowerCase();
+
+  // Match from job title first, then URL
+  const jobMatched = getJobCards(jobInput);
+  const urlMatched = [];
+  Object.entries(analyzerMap).forEach(([key, val]) => {
+    if (urlLower.includes(key) && !jobMatched.find(m => m.label === val.label)) {
+      urlMatched.push(val);
+    }
+  });
+
+  // Combine: job title matches take priority
+  let allMatched = [...jobMatched, ...urlMatched];
+
+  // Always show exactly 3 cards
+  let cards = [];
+  if (allMatched.length >= 3) {
+    cards = allMatched.slice(0, 3);
+  } else if (allMatched.length === 2) {
+    cards = [...allMatched, defaultCards[2]];
+  } else if (allMatched.length === 1) {
+    cards = [...allMatched, defaultCards[0], defaultCards[1]];
+  } else {
+    cards = defaultCards;
+  }
+
+  const displayDomain = domain || jobInput;
+  document.getElementById("resultDomain").textContent = jobInput
+    ? `Matched to: ${jobInput}${domain ? " at " + domain : ""}`
+    : "Matched to: " + domain;
+
   document.getElementById("resultCards").innerHTML = cards.map(c => `
     <div class="result-card">
       <div class="result-card-label">${c.label}</div>
       <div class="result-card-text">${c.text}</div>
     </div>`).join("");
+
+  // Generate tailored pitch
+  const pitch = buildPitch(domain, jobInput);
+  document.getElementById("pitchText").textContent = pitch;
+  document.getElementById("pitchBox").style.display = "block";
+  document.getElementById("copyBtn").textContent = "📋 Copy Pitch";
+
   document.getElementById("analyzerResults").style.display = "block";
+  document.getElementById("clearBtn").style.display = "inline-flex";
+}
+
+function clearAnalyzer() {
+  document.getElementById("urlInput").value = "";
+  if (document.getElementById("jobInput")) document.getElementById("jobInput").value = "";
+  document.getElementById("analyzerResults").style.display = "none";
+  document.getElementById("pitchBox").style.display = "none";
+  document.getElementById("clearBtn").style.display = "none";
+}
+
+function copyPitch() {
+  const pitch = document.getElementById("pitchText").textContent;
+  navigator.clipboard.writeText(pitch).then(() => {
+    const btn = document.getElementById("copyBtn");
+    btn.textContent = "✓ Copied!";
+    setTimeout(() => { btn.textContent = "📋 Copy Pitch"; }, 2000);
+  });
 }
 
 /* ===== PARTICLE NETWORK BACKGROUND ===== */
@@ -279,7 +358,7 @@ function initParticles() {
 function initTyping() {
   const el = document.getElementById("typedRole");
   if (!el) return;
-  const roles = ["ICT Support Specialist","Network Technician","Web Developer","CCNA Certified","Cybersecurity Analyst","Open to Work from Kenya","Helpdesk Engineer","Full Stack Developer"];
+  const roles = ["ICT Support Specialist","Network Technician","Web Developer","CCNA Certified","Cybersecurity Analyst","Open to Work from Kenya","Helpdesk Engineer","Full Stack Developer","Pentest Report Builder"];
   let roleIndex = 0, charIndex = 0, deleting = false;
   function type() {
     const current = roles[roleIndex];
@@ -325,9 +404,7 @@ function initScrollProgress() {
 function initBackToTop() {
   const btn = document.getElementById("backToTop");
   if (!btn) return;
-  window.addEventListener("scroll", () => {
-    btn.classList.toggle("visible", window.scrollY > 300);
-  });
+  window.addEventListener("scroll", () => { btn.classList.toggle("visible", window.scrollY > 300); });
 }
 
 /* ===== INIT ===== */
@@ -343,15 +420,12 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-
   renderSkills();
   renderProjects();
   renderAchievements();
   animateCounters();
-
   const homeLink = document.querySelector('.nav-links a[data-page="home"]');
   if (homeLink) homeLink.classList.add("nav-active");
-
   updateFloatNav('home');
   initParticles();
   initTyping();
